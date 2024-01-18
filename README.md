@@ -18,3 +18,21 @@ docker run -v "$(pwd)":"/opt/$(basename $(pwd))" --platform linux/amd64 -it --ca
 On Intel Mac, remove `--platform linux/amd64`.
 
 Remember to use `RD` and not `R`. For example, `RD CMD build .`.
+
+For checking package "BayesMallows", here is what's needed:
+
+```
+RD CMD build BayesMallows/ --no-build-vignettes
+```
+
+```
+RD CMD INSTALL BayesMallows*.tar.gz
+```
+
+Then `cd` into `BayesMallows/tests` and run this:
+
+```
+library(BayesMallows)
+library(testthat)
+test_check("BayesMallows", reporter = LocationReporter)
+```
