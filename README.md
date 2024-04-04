@@ -29,7 +29,7 @@ RD CMD build BayesMallows/ --no-build-vignettes
 RD CMD INSTALL BayesMallows*.tar.gz
 ```
 
-Then `cd` into `BayesMallows/tests` and run this:
+Then `cd` into `BayesMallows/tests`, open R development version with `RD` and run this:
 
 ```
 library(BayesMallows)
